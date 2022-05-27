@@ -8,9 +8,11 @@ namespace Operadores
         {
             //AveriguarEdad();
 
-            Ejercicios_1 objEjercicio = new Ejercicios_1();
-            objEjercicio.LetraONumero();
+            //Ejercicios_1 objEjercicio = new Ejercicios_1();
+            //objEjercicio.LetraONumero();
 
+            Ciclos objCiclos = new Ciclos();
+            objCiclos.EjemploCicloFor();
         }
 
         //CamelCase
