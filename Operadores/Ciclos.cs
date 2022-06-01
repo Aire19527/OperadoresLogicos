@@ -1,6 +1,6 @@
-﻿using System;
+﻿using Operadores.Modelos;
+using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace Operadores
 {
@@ -91,7 +91,7 @@ namespace Operadores
                 {
                     objEjercicios.Circulo();
                 }
-                else if(ejercio==4)
+                else if (ejercio == 4)
                 {
                     objEjercicios.DeterminarParOImpar();
                 }
@@ -115,7 +115,7 @@ namespace Operadores
         {
             //Digitar la cantidad de veces que se va a repetir un nombre
             int opt = 1;
-            while (opt==1)
+            while (opt == 1)
             {
                 Console.Clear();
                 Console.WriteLine("***********************");
@@ -124,7 +124,7 @@ namespace Operadores
                 Console.WriteLine("");
                 Console.WriteLine("1. Repetir For");
                 Console.WriteLine("2. ** SALIR **");
-                int ejercio =Convert.ToInt32(Console.ReadLine());
+                int ejercio = Convert.ToInt32(Console.ReadLine());
 
                 if (ejercio == 1)
                 {
@@ -147,10 +147,93 @@ namespace Operadores
                     Console.WriteLine($"Hasta la próxima");
                     opt = 2;
                 }
-                
+
 
             }
         }
 
+        public void EjemploCicloForEach()
+        {
+
+            List<ProductoDto> listaProducto = new List<ProductoDto>();
+
+            ProductoDto primerProducto = new ProductoDto();
+            primerProducto.Cantidad = 10;
+            primerProducto.Precio = 200;
+            primerProducto.Nombre = "Manzanas";
+
+            ProductoDto segundoProducto = new ProductoDto()
+            {
+                Nombre = "Mamoncillos",
+                Cantidad = 150,
+                Precio = 100
+            };
+
+            listaProducto.Add(primerProducto);
+            listaProducto.Add(segundoProducto);
+
+            foreach (var product in listaProducto)
+            {
+                double valorPotencial = product.Cantidad * product.Precio;
+                Console.WriteLine($"{product.Nombre} - Valor Potencial: {valorPotencial}");
+            }
+
+            Console.ReadKey();
+        }
+
+
+        public void EjercicioPractico()
+        {
+            //Recorrer un listado de 3 productos, y digitar el nombre, precio y la cantidad que sea al azar, 
+            //entre 100 y 100
+
+            int opt = 1;
+            while (opt == 1)
+            {
+                Console.Clear();
+                Console.WriteLine("***********************");
+                Console.WriteLine("***Ejercicios Prácticos ***");
+                Console.WriteLine("***********************");
+                Console.WriteLine("");
+                Console.WriteLine("1. Ejercicio");
+                Console.WriteLine("2. ** SALIR **");
+                int ejercio = Convert.ToInt32(Console.ReadLine());
+                if (ejercio == 1)
+                {
+                    List<ProductoDto> listProduct = new List<ProductoDto>();
+                    for (int i = 1; i <= 3; i++)
+                    {
+                        Console.WriteLine("Por favor digita el nombre del producto");
+                        string nombreProducto = Console.ReadLine();
+                        Console.WriteLine("Por favor digita el valor del producto");
+                        double valorProducto = Convert.ToDouble(Console.ReadLine());
+                        var rnd = new Random();
+                        int cantidad = rnd.Next(100, 1000);
+                        Console.WriteLine($"Cantidad Random: {cantidad}");
+                        Console.WriteLine("");
+                        listProduct.Add(new ProductoDto()
+                        {
+                            Cantidad = cantidad,
+                            Precio = valorProducto,
+                            Nombre = nombreProducto,
+                        });
+                    }
+
+                    foreach (var product in listProduct)
+                    {
+                        double valorPotencial = product.Cantidad * product.Precio;
+                        Console.WriteLine($"{product.Nombre} - Valor Potencial: {valorPotencial}");
+                    }
+
+                    Console.ReadKey();
+                }
+                else
+                {
+                    opt = 2;
+                }
+
+            }
+
+        }
     }
 }
