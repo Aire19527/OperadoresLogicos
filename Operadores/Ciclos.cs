@@ -181,7 +181,6 @@ namespace Operadores
             Console.ReadKey();
         }
 
-
         public void EjercicioPractico()
         {
             //Recorrer un listado de 3 productos, y digitar el nombre, precio y la cantidad que sea al azar, 
@@ -235,5 +234,81 @@ namespace Operadores
             }
 
         }
+
+
+        public void Multiplos()
+        {
+            Console.Write("Señor usuario, por favor digita un número entero: ");
+            int numero = Convert.ToInt32(Console.ReadLine());
+
+            for (int i = 1; i <= 10; i++)
+            {
+                Console.WriteLine("");
+                int multiplo = numero * i;
+                Console.WriteLine($"{numero} x {i} = {multiplo}");
+            }
+        }
+
+        public void SumaEnteros()
+        {
+            Console.Write("Ingrese el primer número entero: ");
+            int numero_1 = Convert.ToInt32(Console.ReadLine());
+            Console.Write("Ingrese el segundo número entero: ");
+            int numero_2 = Convert.ToInt32(Console.ReadLine());
+
+            int suma = 0;
+            int resultado = numero_2 - numero_1;
+            if (resultado >= 0)
+            {
+                int aumento = resultado;
+                if (numero_1 > 1)
+                    aumento = (aumento + numero_1) - 1;
+
+                for (int i = 0; i <= aumento; i++)
+                {
+                    //Console.WriteLine(i);
+                    if (i > numero_1)
+                        suma = suma + i;
+                }
+                Console.WriteLine("La suma es: " + suma);
+            }
+            else
+            {
+                Console.WriteLine("Señor usuario, por favor digita el primer número mayor al segundo número");
+            }
+        }
+
+        //Camel Case
+        public void TiempoViaje()
+        {
+            int opt = 1;
+            decimal sumaTramos = 0;
+            while (opt != 0)
+            {
+                Console.Write("Duración Tramo: ");
+                int tramo = Convert.ToInt32(Console.ReadLine());
+                if (tramo == 0)
+                {
+                    decimal viajeGlobal = sumaTramos / 60;
+                    var hora = viajeGlobal.ToString().Split(',');
+
+                    string strMinutos = $"0,{hora[1]}";
+                    decimal minutos = Convert.ToDecimal(strMinutos);
+                    decimal minutosReales = minutos * 60;
+
+                    if (hora[0] != "0")
+                    {
+                        Console.WriteLine($"Tiempo total del viaje: {hora[0]}:{ Math.Round(minutosReales, 0) }");
+                    }
+                    else
+                        Console.WriteLine($"Tiempo total del viaje: 00:{ Math.Round(minutosReales, 0) }");
+
+                    opt = 0;
+                }
+                else
+                    sumaTramos = sumaTramos + tramo;
+            }
+        }
     }
 }
+

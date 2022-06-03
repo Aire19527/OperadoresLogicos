@@ -13,7 +13,7 @@ namespace Operadores
             //objEjercicio.LetraONumero();
 
             Ciclos objCiclos = new Ciclos();
-            objCiclos.EjercicioPractico();
+            objCiclos.TiempoViaje();
 
             //var valor_1 = TextoaDecimal(String.Format("{0:N0}", 3000));
             //var valor_2 = TextoaDecimal("5,600");
@@ -22,29 +22,17 @@ namespace Operadores
 
             //double value = 1234567890;
 
-
-            //NumberFormatInfo formato = new CultureInfo("es-AR").NumberFormat;
-
-            //formato.NumberDecimalSeparator = ",";
-
-            //Console.WriteLine(numero.ToString("N", formato));
-            //var newNumer = numero.ToString("N", formato);
-            //Console.WriteLine(String.Format("{0:N0}", newNumer));
         }
+
         public static decimal TextoaDecimal(string s)
         {
-            if (s.Contains(","))
-            {
-                var clone = (CultureInfo)CultureInfo.InvariantCulture.Clone();
-                clone.NumberFormat.NumberDecimalSeparator = ",";
-                clone.NumberFormat.NumberGroupSeparator = ".";
-                // ejemplo string s = "1,14535765" o string s="1.141516";
-                decimal d = decimal.Parse(s, clone);
+            var clone = (CultureInfo)CultureInfo.InvariantCulture.Clone();
+            clone.NumberFormat.NumberDecimalSeparator = ",";
+            clone.NumberFormat.NumberGroupSeparator = ".";
+            // ejemplo string s = "1,14535765" o string s="1.141516";
+            decimal d = decimal.Parse(s, clone);
 
-                return d;
-            }
-            //return s;
-            return decimal.Parse(s);
+            return d;
         }
 
         //CamelCase
