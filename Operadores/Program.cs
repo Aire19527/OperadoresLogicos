@@ -12,8 +12,9 @@ namespace Operadores
             //Ejercicios_1 objEjercicio = new Ejercicios_1();
             //objEjercicio.LetraONumero();
 
-            Ciclos objCiclos = new Ciclos();
-            objCiclos.TiempoViaje();
+
+            //Ciclos objCiclos = new Ciclos();
+            //objCiclos.TiempoViaje();
 
             //var valor_1 = TextoaDecimal(String.Format("{0:N0}", 3000));
             //var valor_2 = TextoaDecimal("5,600");
@@ -21,6 +22,10 @@ namespace Operadores
             //decimal numero = 1921651;
 
             //double value = 1234567890;
+
+
+            Listas objLista=new Listas();
+            objLista.Consulta_1();
 
         }
 
