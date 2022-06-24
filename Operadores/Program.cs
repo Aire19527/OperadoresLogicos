@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Operadores.Logica;
+using System;
 using System.Globalization;
 
 namespace Operadores
@@ -24,9 +25,11 @@ namespace Operadores
             //double value = 1234567890;
 
 
-            Listas objLista=new Listas();
-            objLista.Consulta_1();
+            //Listas objLista=new Listas();
+            //objLista.Consulta_1();
 
+            AdminsitradorInventario  objAdminsitradorInventario = new AdminsitradorInventario();
+            objAdminsitradorInventario.Orquestador();
         }
 
         public static decimal TextoaDecimal(string s)
