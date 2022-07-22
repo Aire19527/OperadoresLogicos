@@ -13,6 +13,7 @@ namespace Operadores.Logica
         //	A.el nombre,
         //	B.cantidad y
         //	C.precio de un producto. 
+
         //2. Realizar la venta de un producto 
         //3. Realizar reporte
         //	A.informando cuantos productos se han vendidos,

@@ -28,8 +28,11 @@ namespace Operadores
             //Listas objLista=new Listas();
             //objLista.Consulta_1();
 
-            AdminsitradorInventario  objAdminsitradorInventario = new AdminsitradorInventario();
-            objAdminsitradorInventario.Orquestador();
+            //AdminsitradorInventario  objAdminsitradorInventario = new AdminsitradorInventario();
+            //objAdminsitradorInventario.Orquestador();
+
+            ManejoListas manejoListasas = new ManejoListas();   
+            
         }
 
         public static decimal TextoaDecimal(string s)
